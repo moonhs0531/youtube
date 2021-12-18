@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getVideos } from '../../../redux/videos/slice';
+import VideoList from '../../../shared/list/components/VideoList';
 
 const MainVideosContainer = function () {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const MainVideosContainer = function () {
       {
             list.items.map((item) => <img src={item.snippet.thumbnails.medium.url} alt="" />)
         }
+      <VideoList />
     </Container>
   );
 };
