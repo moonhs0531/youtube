@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Routes from './Routes';
+import MainVideosContainer from './MainVideosContainer';
 
-const App = function () {
+const MainContainer = function () {
   return (
     <Container>
-      <Routes />
+      <MainVideosContainer />
     </Container>
   );
 };
@@ -15,4 +15,4 @@ const Container = styled.div`
 
 `;
 
-export default App;
+export default MainContainer;

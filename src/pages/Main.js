@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Routes from './Routes';
+import MainContainer from '../views/main/containers/MainContainer';
 
-const App = function () {
+const Main = function () {
   return (
     <Container>
-      <Routes />
+      <MainContainer />
     </Container>
   );
 };
@@ -15,4 +15,4 @@ const Container = styled.div`
 
 `;
 
-export default App;
+export default Main;
