@@ -9,6 +9,7 @@ export const getVideosRest = async () => {
         part: 'id, snippet',
         chart: 'mostPopular',
         key: 'AIzaSyD2Buic_jeTe_bX8KSr9hdhnedk0jbT4gs',
+        maxResults: 30,
       },
     });
 

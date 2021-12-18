@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const VideoList = function () {
+import VideoItem from '../../item/VideoItem';
+
+const VideoList = function ({ data }) {
   return (
     <Container>
-      VideoList
+      {
+            data.items.map((item) => <VideoItem item={item} />)
+        }
     </Container>
   );
 };

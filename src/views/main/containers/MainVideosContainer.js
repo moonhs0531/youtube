@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getVideos } from '../../../redux/videos/slice';
-import VideoList from '../../../shared/list/components/VideoList';
+import VideoItem from '../../../shared/item/VideoItem';
 
 const MainVideosContainer = function () {
   const dispatch = useDispatch();
@@ -13,18 +13,35 @@ const MainVideosContainer = function () {
   }, []);
 
   if (!list.items) return 'Loading..';
+
   return (
     <Container>
-      {
-            list.items.map((item) => <img src={item.snippet.thumbnails.medium.url} alt="" />)
+      <Row>
+        {
+          list.items.map((item) => (
+            <Col key={item.id}>
+              <VideoItem item={item} />
+            </Col>
+          ))
         }
-      <VideoList />
+      </Row>
     </Container>
   );
 };
 
 const Container = styled.div`
+  padding-top: 32px;
+`;
 
+const Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+`;
+
+const Col = styled.div`
+    padding: 0 10px;
+  margin-bottom: 20px;
 `;
 
 export default MainVideosContainer;
