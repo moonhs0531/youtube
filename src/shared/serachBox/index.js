@@ -2,34 +2,29 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
-import { SearchIcon } from '../../icons';
-
-const [value, setValue] = useState('');
-
-const onSubmit = (e) => {
-  e.preventDefault();
-  history.push(`/results/${value}`);
-  console.log(e);
-};
-
-const history = useHistory();
-
-const onChange = (event) => {
-  setValue(event.target.value);
-};
-
 const SearchBox = function () {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    history.push(`/results/${value}`);
+  };
+
+  const [value, setValue] = useState('');
+
+  const history = useHistory();
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <Container>
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <input
-            type="text"
-            onChange={onChange}
+              type="text"
+              onChange={onChange}
         />
-        <Button type="submit">
-          <SearchIcon />
-        </Button>
-      </form>
+        <Button type="submit" />
+      </Form>
     </Container>
   );
 };
