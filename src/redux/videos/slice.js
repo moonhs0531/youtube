@@ -9,12 +9,26 @@ const slice = createSlice({
     getVideos: (state, action) => ({
       ...state,
     }),
-    setVideos: (state, action) => ({
+    setVideos: (state, { payload }) => ({
       ...state,
-      list: action.payload,
+      list: payload,
+    }),
+    getVideoById: (state, { payload }) => ({
+      ...state,
+    }),
+
+    setVideoById: (state, { payload }) => ({
+      ...state,
+      detail: {
+        ...state.detail,
+        [payload.id]: payload,
+      },
     }),
   },
 });
 
-export const { getVideos, setVideos } = slice.actions;
+export const {
+  getVideos, setVideos, getVideoById, setVideoById,
+} = slice.actions;
+
 export default slice.reducer;
