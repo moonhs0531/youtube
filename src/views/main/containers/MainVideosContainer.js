@@ -20,7 +20,13 @@ const MainVideosContainer = function () {
         {
           list.items.map((item) => (
             <Col key={item.id}>
-              <VideoItem item={item} />
+              <VideoItem
+                thumbnailUrl={item.snippet.thumbnails.medium.url}
+                title={item.snippet.localized.title}
+                channelTitle={item.snippet.channelTitle}
+                publishedAt={item.snippet.publishedAt}
+                to={`/watch?v=${item.id}`}
+              />
             </Col>
           ))
         }

@@ -1,20 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const VideoItem = function ({ item }) {
+const VideoItem = function ({
+  thumbnailUrl, channelTitle, publishedAt, title, to,
+}) {
   return (
-    <Container>
+    <Container to={to}>
       <Thumb>
-        <img src={item.snippet.thumbnails.medium.url} alt="" />
+        <img src={thumbnailUrl} alt="" />
         <div>
           <h3>
-            {item.snippet.localized.title}
+            {title}
           </h3>
           <p>
-            {item.snippet.channelTitle}
+            {channelTitle}
           </p>
           <p>
-            {item.snippet.publishedAt}
+            {publishedAt}
           </p>
         </div>
       </Thumb>
@@ -22,8 +25,8 @@ const VideoItem = function ({ item }) {
   );
 };
 
-const Container = styled.div`
-
+const Container = styled(Link)`
+  display: block;
 `;
 
 const Thumb = styled.div`
