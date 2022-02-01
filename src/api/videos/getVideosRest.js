@@ -8,7 +8,9 @@ export const getVideosRest = async () => {
       params: {
         part: 'id, snippet',
         chart: 'mostPopular',
-        key: 'AIzaSyD2Buic_jeTe_bX8KSr9hdhnedk0jbT4gs',
+        key: 'AIzaSyCwC0xB6LcLXsVciMbgVI9gU0xtO_uXZrE',
+        regionCode: 'kr',
+        hl: 'ko',
         maxResults: 30,
       },
     });

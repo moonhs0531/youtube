@@ -7,8 +7,11 @@ export const getVideoByIdRest = async ({ id }) => {
       url: 'https://www.googleapis.com/youtube/v3/videos',
       params: {
         part: 'id, snippet',
+        regionCode: 'kr',
+        hl: 'ko',
         id,
-        key: 'AIzaSyD2Buic_jeTe_bX8KSr9hdhnedk0jbT4gs',
+        // key: 'AIzaSyD2Buic_jeTe_bX8KSr9hdhnedk0jbT4gs',
+        key: 'AIzaSyCwC0xB6LcLXsVciMbgVI9gU0xtO_uXZrE',
       },
     });
 

@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ResultContainer from '../views/results/containers/ResultContainer';
+
 const Result = function () {
   return (
     <Container>
-      Result
+      <ResultContainer />
     </Container>
   );
 };
