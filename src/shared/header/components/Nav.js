@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { MakeVideo } from '../../../icons';
+import { IconNotification, IconYoutubeApp, MakeVideo } from '../../../icons';
 
 const Nav = function () {
   return (
@@ -11,10 +11,10 @@ const Nav = function () {
           <MakeVideo />
         </NavLink>
         <NavLink>
-          <MakeVideo />
+          <IconYoutubeApp />
         </NavLink>
         <NavLink>
-          <MakeVideo />
+          <IconNotification />
         </NavLink>
       </NavItem>
     </Container>
@@ -31,8 +31,17 @@ const NavItem = styled.div`
 `;
 
 const NavLink = styled.div`
+    width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg{
     width: 24px;
-  height: 24px;
+    height: 24px;
+    fill: #fff;
+  }
 `;
 
 export default Nav;
