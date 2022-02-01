@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import GuideCategoriesContainer from './GuideCategoriesContainer';
+
 const SortVideosContainer = function () {
   return (
-    <Container />
+    <GuideCategoriesContainer />
   );
 };
 

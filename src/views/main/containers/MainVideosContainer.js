@@ -4,8 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getVideos } from '../../../redux/videos/slice';
 import VideoItem from '../../../shared/item/VideoItem';
+import { useWindowSize } from '../../../shared/hooks/WindowSize';
 
 const MainVideosContainer = function () {
+  const size = useWindowSize();
+
+  console.log(size);
+
   const dispatch = useDispatch();
   const list = useSelector((state) => state.videos.list);
   useEffect(() => {
