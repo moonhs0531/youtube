@@ -4,33 +4,31 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import qs from 'qs';
 
-import DetailComponent from '../componenets/DetailComponent';
-import { getVideoById } from '../../../redux/videos/slice';
+import CommentsComponent from '../componenets/CommentsComponent';
+import { getComment } from '../../../redux/comment/slice';
 
-const WatchContainer = function () {
+const CommentContainer = function () {
   const dispatch = useDispatch();
-  const detail = useSelector((state) => state.videos.detail);
+  const result = useSelector((state) => state.comment.result);
   const location = useLocation();
   const paramsStr = location.search;
 
   const { v } = qs.parse(paramsStr, { ignoreQueryPrefix: true });
+  console.log('v', v);
 
   useEffect(() => {
-    dispatch(getVideoById({ id: v }));
-  }, [v]);
-
-  if (!detail.undefined?.items) return 'Loading..';
+    dispatch(getComment({ id: v }));
+  }, []);
 
   return (
     <Container>
-      <DetailComponent data={detail.undefined.items[0]} />
+      <CommentsComponent />
     </Container>
   );
 };
 
 const Container = styled.div`
-background-color: #000;
-  padding: 24px;
+
 `;
 
-export default WatchContainer;
+export default CommentContainer;

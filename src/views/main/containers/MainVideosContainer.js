@@ -13,6 +13,7 @@ const MainVideosContainer = function () {
 
   const dispatch = useDispatch();
   const list = useSelector((state) => state.videos.list);
+
   useEffect(() => {
     dispatch(getVideos({}));
   }, []);

@@ -16,13 +16,6 @@ const App = function () {
 };
 
 const Container = styled.div`
-  width: 100%;
-.flex{
-  display: flex;
-}
-  .content{
-    
-  }
 `;
 
 export default App;

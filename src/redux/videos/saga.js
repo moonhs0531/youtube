@@ -12,7 +12,7 @@ function* getVideosSaga({ payload }) {
 
 function* getVideoByIdSaga({ payload }) {
   const result = yield call(getVideoByIdRest, payload);
-  yield put(setVideoById(result.items[0]));
+  yield put(setVideoById(result));
 }
 
 function* saga() {

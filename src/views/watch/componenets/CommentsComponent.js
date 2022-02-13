@@ -1,17 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import MainContainer from '../views/main/containers/MainContainer';
-
-const Main = function () {
+const CommentsComponent = function () {
   return (
     <Container>
-      <MainContainer />
+      CommentsComponent
     </Container>
   );
 };
 
 const Container = styled.div`
+
 `;
 
-export default Main;
+export default CommentsComponent;
